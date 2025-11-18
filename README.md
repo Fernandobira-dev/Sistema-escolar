@@ -1,2 +1,2 @@
 # Sistema-escolar
-Aplicação web para gestão de lançamento de notas escolar
+Este será o repositório onde guardarei todos os meus projetos
