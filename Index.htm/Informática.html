@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Informática</title>
+    <link rel="stylesheet" href="../bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">    <style>
+        body {
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        .header-section {
+            background-color: #007bff;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .info-section {
+            background-color: #fff;
+            padding: 40px 0;
+        }
+
+        .info-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #007bff;
+        }
+
+        .course-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+      
+        #id{
+          color: black;
+        }
+        #icon-30{
+          width: 75px;
+          height: 60px;
+          margin-right: 2%;
+        }
+        .navbar .nav-link {
+    color: white !important; /* Garantir que o texto dos links seja branco */
+}
+
+ .footer-uan {
+            background-color: #0d2c5e; /* Azul escuro principal do rodapé da UAN */
+            color: white;
+            padding-top: 30px;
+            margin-top: 40px;
+            font-size: 0.95rem; /* Ajuste para ser similar ao tamanho da fonte da UAN */
+        }
+
+        .footer-uan .footer-col {
+            padding: 0 15px; /* Espaçamento entre as colunas */
+            margin-bottom: 30px;
+        }
+
+        .footer-uan .footer-col h5 {
+            color: #d1d8e0; /* Cor para os títulos das seções */
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px; /* Espaço para a linha abaixo do título */
+        }
+
+        .footer-uan .footer-col h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 50px; /* Largura da linha abaixo do título */
+            background-color: #007bff; /* Azul vibrante como na UAN */
+        }
+
+        .footer-uan .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-uan .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-uan .footer-col ul li a {
+            color: #ced4da; /* Cor dos links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-uan .footer-col ul li a:hover {
+            color: #fff; /* Cor dos links ao passar o mouse */
+        }
+
+        .footer-uan .footer-col ul li i {
+            margin-right: 8px;
+            color: #007bff; /* Cor dos ícones dos links */
+        }
+
+        .footer-uan .contact-info p {
+            margin-bottom: 10px;
+            color: #ced4da;
+        }
+
+        .footer-uan .contact-info p i {
+            margin-right: 8px;
+            color: #007bff; /* Cor dos ícones de contato */
+        }
+
+        .footer-uan .social-icons .btn {
+            background-color: #007bff; /* Cor de fundo dos botões de redes sociais */
+            border: none;
+            color: white;
+            width: 38px; /* Tamanho do botão */
+            height: 38px;
+            border-radius: 50%; /* Torna o botão redondo */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-uan .social-icons .btn:hover {
+            background-color: #0056b3; /* Cor ao passar o mouse */
+        }
+
+        .footer-bottom {
+            background-color: #0a234a; /* Cor de fundo da parte inferior do rodapé */
+            padding: 15px 0;
+            color: #ced4da;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .footer-bottom img {
+            width: 50px; /* Tamanho do logo no rodapé */
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Botão flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366; /* Cor verde do WhatsApp */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            z-index: 1000; /* Garante que fique acima de outros elementos */
+            transition: background-color 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e; /* Verde mais escuro ao passar o mouse */
+            color: white; /* Mantém o ícone branco no hover */
+        }
+    </style>
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-text-white">
+        <div class="container">
+          <img src="icon.png" alt="icon" id="icon-30">
+            <a class="navbar-brand" href="#">INSTITUTO POLITECNICO 30 DE SETEMBRO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">INÍCIO</a></li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       OFERTAS LECTIVAS
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="Informática.html"><i class="bi bi-laptop me-2"></i>Tecnico de Informática</a></li>
+                        <li><a class="dropdown-item" href="electricidade.html"><i class="bi bi-lightning-charge me-2"></i>Tecnico de Instalações Elétricas</a></li>
+                      </ul>
+                    </li>
+                    
+                     <li class="nav-item"><a class="nav-link" href="../Index.htm/duvidas.html">DÚVIDAS?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">SOBRE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../usuario.php/login.php">ENTRAR</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Information Section -->
+    <div class="container info-section">
+        <h2>Sobre o Curso de Tecnico de Informática</h2>
+        <p class="text-center mb-4">Nosso programa de cursos de informática oferece treinamento completo nas principais áreas da tecnologia. Se você está iniciando sua jornada ou deseja aprimorar suas habilidades, temos o curso ideal para você!</p>
+
+        <div class="row">
+            <!-- Card 1: Curso de Programação -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card">
+                    <img src="uploads/transferir.jfif" class="card-img-top" alt="Curso de Programação">
+                    <div class="card-body">
+                        <h5 class="card-title">Curso de Programação Desketop </h5>
+                        <p class="card-text">Aprenda as bases da programação com as principais linguagens de código, como Python, Java, e C#, C, C++.</p>
+                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Curso de Redes de Computadores -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card">
+                    <img src="uploads/transferir (1).jfif" class="card-img-top" alt="Curso de Redes de Computadores">
+                    <div class="card-body">
+                        <h5 class="card-title">Curso de Redes de Computadores</h5>
+                        <p class="card-text">Entenda como funcionam as redes de computadores, aprendendo a configurar, manter e otimizar redes locais e globais.</p>
+                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Curso de Desenvolvimento Web -->
+            <div class="col-md-4 mb-4">
+                <div class="card course-card">
+                    <img src="uploads/transferir (2).jfif" class="card-img-top" alt="Curso de Desenvolvimento Web">
+                    <div class="card-body">
+                        <h5 class="card-title">Curso de Desenvolvimento Web</h5>
+                        <p class="card-text">Aprenda a construir sites e aplicações web modernas com HTML, CSS, JavaScript e frameworks PHP SQL.</p>
+                        <a href="#" class="btn btn-primary">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão de Voltar -->
+        <div class="text-center mt-4">
+           
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-uan">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="d-flex align-items-center mb-3">
+                       
+                        <div  class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                            <h5 style="color: white; margin-bottom: 0;">Localização</h5>
+                            <p class="mb-0" style="font-size: 0.9rem; color: #ced4da;"></p>
+                        </div>
+                    </div>
+                     <p><i class="bi bi-geo-alt-fill"></i> Bairro Tendas, Luanda - Angola</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                    <h5 style="color: white;">Links rápidos</h5>
+                    <ul>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Exames de Acesso</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Notícias</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Eventos</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                    <h5 style="color: white;">Contactos</h5>
+                    <div class="contact-info">
+                        <p><i class="bi bi-telephone-fill"></i> +244 926 309 186</p>
+                        <p><i class="bi bi-envelope-fill"></i> secretaria@30desetembro.ao</p>
+                        
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                    <h5 style="color: white;">Redes sociais</h5>
+                    <div class="social-icons">
+                        <a href="#" class="btn me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn me-2"><i class="bi bi-youtube"></i></a>                     
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2025 INSTITUTO POLITÉCNICO 30 DE SETEMBRO | Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script></body>
+</html>

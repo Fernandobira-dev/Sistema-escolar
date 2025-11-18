@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dúvidas - Escola</title>
+    <link rel="stylesheet" href="../bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .header-section {
+            background-color: #007bff;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .header-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .faq-section, .contact-section {
+            background-color: #ffffff;
+            padding: 40px 0;
+        }
+        .faq-section h2, .contact-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #007bff;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item h5 {
+            font-weight: bold;
+        }
+        #id{
+          color: black;
+        }
+        #icon-30{
+          width: 60px;
+          height: 50px;
+          margin-right: 2%;
+        }
+
+        .navbar .nav-link {
+    color: white !important; /* Garantir que o texto dos links seja branco */
+}
+
+ .footer-uan {
+            background-color: #0d2c5e; /* Azul escuro principal do rodapé da UAN */
+            color: white;
+            padding-top: 30px;
+            margin-top: 40px;
+            font-size: 0.95rem; /* Ajuste para ser similar ao tamanho da fonte da UAN */
+        }
+
+        .footer-uan .footer-col {
+            padding: 0 15px; /* Espaçamento entre as colunas */
+            margin-bottom: 30px;
+        }
+
+        .footer-uan .footer-col h5 {
+            color: #d1d8e0; /* Cor para os títulos das seções */
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px; /* Espaço para a linha abaixo do título */
+        }
+
+        .footer-uan .footer-col h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 50px; /* Largura da linha abaixo do título */
+            background-color: #007bff; /* Azul vibrante como na UAN */
+        }
+
+        .footer-uan .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-uan .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-uan .footer-col ul li a {
+            color: #ced4da; /* Cor dos links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-uan .footer-col ul li a:hover {
+            color: #fff; /* Cor dos links ao passar o mouse */
+        }
+
+        .footer-uan .footer-col ul li i {
+            margin-right: 8px;
+            color: #007bff; /* Cor dos ícones dos links */
+        }
+
+        .footer-uan .contact-info p {
+            margin-bottom: 10px;
+            color: #ced4da;
+        }
+
+        .footer-uan .contact-info p i {
+            margin-right: 8px;
+            color: #007bff; /* Cor dos ícones de contato */
+        }
+
+        .footer-uan .social-icons .btn {
+            background-color: #007bff; /* Cor de fundo dos botões de redes sociais */
+            border: none;
+            color: white;
+            width: 38px; /* Tamanho do botão */
+            height: 38px;
+            border-radius: 50%; /* Torna o botão redondo */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-uan .social-icons .btn:hover {
+            background-color: #0056b3; /* Cor ao passar o mouse */
+        }
+
+        .footer-bottom {
+            background-color: #0a234a; /* Cor de fundo da parte inferior do rodapé */
+            padding: 15px 0;
+            color: #ced4da;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .footer-bottom img {
+            width: 50px; /* Tamanho do logo no rodapé */
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Botão flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366; /* Cor verde do WhatsApp */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            z-index: 1000; /* Garante que fique acima de outros elementos */
+            transition: background-color 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e; /* Verde mais escuro ao passar o mouse */
+            color: white; /* Mantém o ícone branco no hover */
+        }
+
+         .header-section {
+            background-color: #007bff;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .header-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+          .faq-section, .contact-section {
+            background-color: #ffffff;
+            padding: 40px 0;
+        }
+        .faq-section h2, .contact-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #007bff;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item h5 {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>Esclarecimento de Dúvidas</h1>
+        <p>Encontre respostas para suas perguntas mais frequentes ou envie uma dúvida diretamente para nossa equipe.</p>
+    </div>
+    <!-- FAQ Section -->
+    <div class="container faq-section">
+        <h2>Perguntas Frequentes (FAQ)</h2>
+        <div class="faq-item">
+            <h5>1. Como posso fazer a matrícula?</h5>
+            <p>A matrícula pode ser realizada online através do nosso portal ou diretamente na secretaria da escola. Caso tenha dúvidas, entre em contato com nossa equipe de atendimento.</p>
+        </div>
+        <div class="faq-item">
+            <h5>2. Quais documentos são necessários para matrícula?</h5>
+            <p>É necessário apresentar o RG, CPF, comprovante de residência, foto 3x4, e histórico escolar ou declaração de conclusão do ensino anterior.</p>
+        </div>
+        <div class="faq-item">
+            <h5>3. Como posso acessar o calendário acadêmico?</h5>
+            <p>O calendário acadêmico está disponível no nosso portal para alunos, onde você pode visualizar as datas importantes, como início de semestre, férias e feriados.</p>
+        </div>
+        <div class="faq-item">
+            <h5>4. Como posso consultar minhas notas?</h5>
+            <p>Você pode consultar suas notas diretamente no portal do aluno, onde terá acesso às suas notas, histórico e outras informações acadêmicas.</p>
+        </div>
+        <div class="faq-item">
+            <h5>5. O que fazer se eu tiver dificuldades nas matérias?</h5>
+            <p>Se você tiver dificuldades nas matérias, sugerimos buscar apoio com seus professores ou participar de grupos de estudo. Além disso, nossa escola oferece tutorias e suporte acadêmico.</p>
+        </div>
+    </div>
+
+    
+    <!-- Contact Section -->
+    <div class="container contact-section">
+        <h2>Envie Sua Dúvida</h2>
+        <p class="text-center mb-4">Se você não encontrou a resposta para sua dúvida nas perguntas frequentes, entre em contato com nossa equipe e esclareceremos o que for necessário.</p>
+        
+        <form action="#" method="POST">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Sua Dúvida</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Enviar Dúvida</button>
+            </div>
+        </form>
+    </div>
+
+ 
+    <!-- Footer Section -->
+    <footer class="footer-uan">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="d-flex align-items-center mb-3">
+                       
+                        <div  class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                            <h5 style="color: white; margin-bottom: 0;">Localização</h5>
+                            <p class="mb-0" style="font-size: 0.9rem; color: #ced4da;"></p>
+                        </div>
+                    </div>
+                     <p><i class="bi bi-geo-alt-fill"></i> Bairro Tendas, Luanda - Angola</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                    <h5 style="color: white;">Links rápidos</h5>
+                    <ul>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Exames de Acesso</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Notícias</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Eventos</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                    <h5 style="color: white;">Contactos</h5>
+                    <div class="contact-info">
+                        <p><i class="bi bi-telephone-fill"></i> +244 926 309 186</p>
+                        <p><i class="bi bi-envelope-fill"></i> secretaria@30desetembro.ao</p>
+                        
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                    <h5 style="color: white;">Redes sociais</h5>
+                    <div class="social-icons">
+                        <a href="#" class="btn me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn me-2"><i class="bi bi-youtube"></i></a>                     
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2025 INSTITUTO POLITÉCNICO 30 DE SETEMBRO | Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script></body>
+</html>

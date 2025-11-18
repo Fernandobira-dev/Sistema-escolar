@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>INSTITUTO POLITECNICO 30 DE SETEMBRO</title>
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        /* Aplica desfoque nos textos dos botões */
+        .accordion-button {
+            opacity: .7;
+            font-weight: bold;
+        }
+        .banner {
+            background: url('background.jpg') no-repeat center center;
+            background-size: cover;
+            color: rgba(34, 30, 30, 0);
+            text-align: center;
+        }
+        .banner h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .section {
+            background-color: #f8cce7;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .section-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .section-icons div {
+            background: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        /* Remover o estilo .footer antigo para substituir pelo novo */
+        /* .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        } */
+        #id{
+            color: black;
+        }
+        #icon-30{
+            width: 60px;
+            height: 50px;
+            margin-right: 2%;
+        }
+        .navbar .nav-link {
+            color: white !important; /* Garantir que o texto dos links seja branco */
+        }
+
+        .navbar .nav-link:hover, 
+        .navbar .nav-item.active .nav-link {
+            color: white !important; /* Garantir que o texto dos links seja branco quando estiverem em hover ou ativos */
+        }
+        .carousel-item img {
+            height: 400px; /* ou qualquer altura desejada */
+            object-fit: cover; /* garante que a imagem se ajuste mantendo o aspecto visual */
+        }
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5); /* fundo escuro semi-transparente */
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .carousel-caption h5,
+        .carousel-caption p {
+            color: #fff; /* texto branco para contraste */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        /* NOVOS ESTILOS PARA O RODAPÉ (Inspirados na UAN) */
+        .footer-30 {
+            background-color: #0d2c5e; /* Azul escuro principal do rodapé da UAN */
+            color: white;
+            padding-top: 30px;
+            margin-top: 40px;
+            font-size: 0.95rem; /* Ajuste para ser similar ao tamanho da fonte da UAN */
+        }
+
+        .footer-30 .footer-col {
+            padding: 0 15px; /* Espaçamento entre as colunas */
+            margin-bottom: 30px;
+        }
+
+        .footer-30 .footer-col h5 {
+            color: #d1d8e0; /* Cor para os títulos das seções */
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px; /* Espaço para a linha abaixo do título */
+        }
+
+        .footer-30 .footer-col h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 50px; /* Largura da linha abaixo do título */
+            background-color: #007bff; /* Azul vibrante como na UAN */
+        }
+
+      .footer-30 .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+      .footer-30 .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+       .footer-30 .footer-col ul li a {
+            color: #ced4da; /* Cor dos links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+       .footer-30 .footer-col ul li a:hover {
+            color: #fff; /* Cor dos links ao passar o mouse */
+        }
+
+        .footer-30.footer-col ul li i {
+            margin-right: 8px;
+            color: #007bff; /* Cor dos ícones dos links */
+        }
+
+       .footer-30 .contact-info p {
+            margin-bottom: 10px;
+            color: #ced4da;
+        }
+
+      .footer-30.contact-info p i {
+            margin-right: 8px;
+            color: #007bff; /* Cor dos ícones de contato */
+        }
+
+      .footer-30 .social-icons .btn {
+            background-color: #007bff; /* Cor de fundo dos botões de redes sociais */
+            border: none;
+            color: white;
+            width: 38px; /* Tamanho do botão */
+            height: 38px;
+            border-radius: 50%; /* Torna o botão redondo */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+       .footer-30 .social-icons .btn:hover {
+            background-color: #0056b3; /* Cor ao passar o mouse */
+        }
+
+        .footer-bottom {
+            background-color: #0a234a; /* Cor de fundo da parte inferior do rodapé */
+            padding: 15px 0;
+            color: #ced4da;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .footer-bottom img {
+            width: 50px; /* Tamanho do logo no rodapé */
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Botão flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366; /* Cor verde do WhatsApp */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            z-index: 1000; /* Garante que fique acima de outros elementos */
+            transition: background-color 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e; /* Verde mais escuro ao passar o mouse */
+            color: white; /* Mantém o ícone branco no hover */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-1 bg-primary navbar-text-white">
+        <div class="container">
+            <img src="icon.png" alt="icon" id="icon-30">
+            <a class="navbar-brand" href="#">INSTITUTO POLITÉCNICO 30 DE SETEMBRO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../Index.htm/index.html">INÍCIO</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            OFERTAS LECTIVAS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="../Index.htm/Informática.html"><i class="bi bi-laptop me-2"></i>Tecnico de Informática</a></li>
+                            <li><a class="dropdown-item" href="../Index.htm/electricidade.html"><i class="bi bi-lightning-charge me-2"></i>Tecnico de Instalações Electricas</a></li>
+                        </ul>
+                    </li>
+                     <li class="nav-item"><a class="nav-link" href="../Index.htm/duvidas.html">DÚVIDAS?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">SOBRE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../usuario.php/login.php">ENTRAR</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active position-relative">
+                <img src="img/IMG-20250514-WA0040~2.JPG" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Prova Final</h5>
+                    <p>De correrá de 28 de Maio á 15 de Junho</p>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <img src="img/IMG-20250514-WA0037~2.jpg" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Exame Especial</h5>
+                    <p>De correrá de 16 de junho á 20 de junho</p>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <img src="img/lina.jpg" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Recurso</h5>
+                    <p>Já estão abertas as inscrições para o recurso </p>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <img src="img/papy.jpg" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Defesa Dos Finalistas</h5>
+                    <p>De correrá de 01 de junho á o5 de junho</p>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <img src="img/transferir (1).jfif" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Entrega de Projectos Téorico e Prático do Final do Curso</h5>
+                    <p>De correrá de 28 de Abril á 29 de Abril</p>
+                </div>
+            </div>
+            <div class="carousel-item position-relative">
+                <img src="img/transferir (4).jfif" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Pré Defesa </h5>
+                    <p>De correrá de 20 de Maio á 30 de Maio</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+    
+    <div class="container mt-5" id="sobre">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Missão</h5>
+                        <p class="card-text">
+                            Oferecer formação de excelência, promovendo o desenvolvimento acadêmico e profissional dos nossos alunos. Prepará-los para os desafios do mercado de trabalho, incentivando a inovação, a criatividade e o pensamento crítico, contribuindo para o desenvolvimento da sociedade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Objetivo</h5>
+                        <p class="card-text">
+                            Ser uma referência no ensino superior, proporcionando uma formação integral e de qualidade que combine teoria e prática. Fomentar a inovação, a investigação aplicada e o espírito empreendedor, formando profissionais que sejam agentes de transformação positiva na sociedade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Visão Geral</h5>
+                        <p class="card-text">
+                            Nosso Instituto Politécnico é reconhecido pela qualidade do ensino, inovação em metodologias e parcerias com diversas áreas do conhecimento. Estamos empenhados em formar cidadãos críticos, criativos e preparados para fazer a diferença no mundo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="block-heading-two">
+            <h3><span>Notícias, Anúncios</span></h3>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-4">
+                <div class="accordion" id="accordionRow1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Comunicado
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionRow1">
+                            <div class="accordion-body">
+                                <strong>Descrição:</strong> Segundo um comunicado do INAGBE, está suspenso o processo de renovação de bolsas internas, a partir de 20 de Março, por um período de 15 dias, automaticamente prorrogável por igual período de tempo, se não houver disposição em contrário, em função do comportamento global da pandemia COVID-19.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="accordion" id="accordionRow1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Calendário de Provas
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionRow1">
+                            <div class="accordion-body">
+                                <strong>Descrição:</strong> Aproveite nossa promoção de verão com descontos de até 50% em toda a loja!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="accordion" id="accordionRow1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Época Especial (de 5 a 11 Fev. de 2020)
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionRow1">
+                            <div class="accordion-body">
+                                <strong>Descrição:</strong> A empresa ABC fechou uma parceria estratégica com a XYZ para expandir suas operações globais.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="accordion" id="accordionRow2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Secretaria Virtual
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionRow2">
+                            <div class="accordion-body">
+                                O INSTITUTO POLITECNICO 30 DE SETEMB RO disponibiliza aos seus docentes e discentes um novo sitío na web para consulta e gestão da sua actividade académica. Envie o seu comentário para secretariavirtual@30desetembro.ao
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="accordion" id="accordionRow2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Prova de Recurso
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionRow2">
+                            <div class="accordion-body">
+                                <strong>Descrição:</strong> Participe do maior evento de tecnologia do ano, que acontecerá no próximo mês.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="accordion" id="accordionRow2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Unidades de Crédito
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionRow2">
+                            <div class="accordion-body">
+                                <strong>Descrição:</strong> Estamos com vagas abertas para diversos cargos. Envie seu currículo!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-30">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="d-flex align-items-center mb-3">
+                       
+                        <div  class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                            <h5 style="color: white; margin-bottom: 0;">Localização</h5>
+                            <p class="mb-0" style="font-size: 0.9rem; color: #ced4da;"></p>
+                        </div>
+                    </div>
+                     <p><i class="bi bi-geo-alt-fill"></i> Bairro Tendas, Luanda - Angola</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                    <h5 style="color: white;">Links rápidos</h5>
+                    <ul>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Exames de Acesso</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Notícias</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Eventos</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                    <h5 style="color: white;">Contactos</h5>
+                    <div class="contact-info">
+                        <p><i class="bi bi-telephone-fill"></i> +244 926 309 186</p>
+                        <p><i class="bi bi-envelope-fill"></i> secretaria@30desetembro.ao</p>
+                        
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 footer-col">
+                    <h5 style="color: white;">Redes sociais</h5>
+                    <div class="social-icons">
+                        <a href="#" class="btn me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn me-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn me-2"><i class="bi bi-youtube"></i></a>                     
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2025 INSTITUTO POLITÉCNICO 30 DE SETEMBRO | Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bootstrap-5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
